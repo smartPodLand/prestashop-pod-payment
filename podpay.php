@@ -11,7 +11,7 @@ class PodPay extends PaymentModule {
 
 		$this->name = 'podpay';
 		$this->tab = 'payments_gateways';
-		$this->version = '1.0.3';
+		$this->version = '1.0.4';
 		$this->author = 'Mehran Rahbardar';
 		$this->currencies = true;
 		$this->currencies_mode = 'radio';
@@ -32,27 +32,20 @@ class PodPay extends PaymentModule {
 		else
 			return true;
 	}
-
 	public function uninstall() {
 		if (!parent::uninstall())
 			return false;
 		else
 			return true;
 	}
-    
-
-
 public function hookPayment($params) {
-
     if ($this->active)
         return $this->display(__FILE__, 'podpayment.tpl');
 }
 
 public function hookPaymentReturn($params) {
-//    if ($this->active)
-//       // return $this->display(__FILE__, '.tpl');
-}
 
 }
 
+}
 ?>
